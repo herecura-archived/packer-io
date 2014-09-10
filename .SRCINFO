@@ -1,7 +1,7 @@
 pkgbase = packer-io
 	pkgdesc = tool for creating identical machine images for multiple platforms from a single source configuration.
 	pkgver = 0.7.0
-	pkgrel = 1
+	pkgrel = 2
 	url = http://www.packer.io
 	arch = x86_64
 	arch = i686
@@ -10,6 +10,10 @@ pkgbase = packer-io
 	makedepends = go
 	makedepends = mercurial
 	depends = glibc
+	source = packer-io-bash-completion::git://github.com/mrolli/packer-bash-completion.git
+	source = packer-io-zsh-completion::git://github.com/gunzy83/packer-zsh-completion.git
+	md5sums = SKIP
+	md5sums = SKIP
 
 pkgname = packer-io
 
