@@ -1,6 +1,6 @@
 pkgbase = packer-io
 	pkgdesc = tool for creating identical machine images for multiple platforms from a single source configuration.
-	pkgver = 0.7.2
+	pkgver = 0.7.5
 	pkgrel = 1
 	url = http://www.packer.io
 	arch = x86_64
@@ -12,8 +12,12 @@ pkgbase = packer-io
 	depends = glibc
 	source = packer-io-bash-completion::git://github.com/mrolli/packer-bash-completion.git
 	source = packer-io-zsh-completion::git://github.com/gunzy83/packer-zsh-completion.git
+	source = 0001-atlas-post-processor-unknown-atlas.UploadartifactOpt.patch
+	source = 0001-atlas-post-processor-on-32bit-uint32-overflows-int.patch
 	md5sums = SKIP
 	md5sums = SKIP
+	md5sums = 834144d82d1354e50ef6779452d4d82a
+	md5sums = 8e1c449aa40dba1a384885b1351d28df
 
 pkgname = packer-io
 
