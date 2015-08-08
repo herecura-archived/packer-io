@@ -1,6 +1,6 @@
 pkgbase = packer-io
 	pkgdesc = tool for creating identical machine images for multiple platforms from a single source configuration.
-	pkgver = 0.8.2
+	pkgver = 0.8.3
 	pkgrel = 1
 	url = http://www.packer.io
 	arch = x86_64
