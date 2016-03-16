@@ -3,7 +3,7 @@
 
 _name=packer
 pkgname=packer-io
-pkgver=0.8.5
+pkgver=0.10.0
 pkgrel=1
 pkgdesc="tool for creating identical machine images for multiple platforms from a single source configuration."
 url="http://www.packer.io"
@@ -28,11 +28,12 @@ prepare() {
 
 	[[ ! -d "$srcdir/go" ]] && mkdir -p "$srcdir/go"
 	
-	go get -u github.com/mitchellh/gox
-	go get -u github.com/mitchellh/packer
+	go get -u -d github.com/mitchellh/packer
 	cd "$srcdir/go/src/github.com/mitchellh/packer"
-	make updatedeps
 	git checkout -b v$pkgver v$pkgver
+
+    # dont check version.go
+    sed -e '/VersionPrerelease = ""/ {N;N;N;d;}' -i Makefile
 }
 
 build() {
@@ -51,7 +52,6 @@ package() {
 	cd "$srcdir/go/src/github.com/mitchellh/packer/bin"
 
 	install -Dm755 packer "${pkgdir}/usr/bin/packer-io"
-	install -Dm755 packer-* "${pkgdir}/usr/bin"
 
 	cd "$srcdir/go/src/github.com/mitchellh/packer"
 	# license
