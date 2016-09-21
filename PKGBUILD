@@ -3,7 +3,7 @@
 
 _name=packer
 pkgname=packer-io
-pkgver=0.10.1
+pkgver=0.10.2
 pkgrel=1
 pkgdesc="tool for creating identical machine images for multiple platforms from a single source configuration."
 url="http://www.packer.io"
